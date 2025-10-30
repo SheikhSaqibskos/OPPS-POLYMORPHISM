@@ -21,3 +21,7 @@ In Python the key types of polymorphism discussed are:
 print(f"{obj.__class__.__name__} says {obj.sound()}")
 
 -It means: for any object obj, print its class’s name and then call its sound() method. This helps illustrate that polymorphism is at work: different objects, same method name sound(), different outputs.
+
+**Code Explanation of Polymorphism (Bank Account Example):**
+
+Polymorphism in Python allows the same method name to perform different actions depending on the object that calls it. In this program, the base class BankAccount defines general methods like deposit(), withdraw(), and display_balance(). Two subclasses—SavingsAccount and CurrentAccount—inherit from it and override the withdraw() method to follow their own rules. This shows polymorphism because the same call account.withdraw() produces different results depending on the account type. The use of self.__class__.__name__ in print statements dynamically displays the class name, helping to identify which class performed the action. Polymorphism makes the program flexible, reusable, and easy to extend since new account types can be added without changing existing code.
