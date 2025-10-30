@@ -1,0 +1,19 @@
+CurrentAccount: Deposited 500. New balance = 2500
+BankAccount: Deposited 500. New balance = 1000
+
+--- Performing Withdrawals (Polymorphism in action) ---
+SavingsAccount: Insufficient balance! Cannot withdraw 8000.
+
+DIFFERENT OUTCOME
+=> CurrentAccount: Overdraft limit exceeded! Cannot withdraw 8000.
+
+BankAccount: Generic withdrawal — override in subclass
+
+--- Displaying Balances ---
+SavingsAccount: Alice's current balance = 1500
+CurrentAccount: Bob's current balance = 2500
+BankAccount: Charlie's current balance = 1000
+
+--- Adding Interest and Fees (Specific to Subclasses) ---
+SavingsAccount: Interest added = 75.0. New balance = 1575.0
+CurrentAccount: Fee of 200 charged. Remaining balance = 2300
