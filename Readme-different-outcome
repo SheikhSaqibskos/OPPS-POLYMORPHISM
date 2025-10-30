@@ -20,36 +20,14 @@
 
 #CODE START HERE
 
-# ---------------------------------------------------------------
-# Extra Test Section – Demonstrating Overdraft Limit Behavior
-# ---------------------------------------------------------------
+# 💡 Expected Output
 
-print("\n--- Testing Overdraft Limit in CurrentAccount ---")
+# --- Testing Overdraft Limit in CurrentAccount ---
 
-# Create a CurrentAccount with small balance and limited overdraft
-test_account = CurrentAccount("David", balance=1000, overdraft_limit=2000)
+# Case 1: Withdraw within limit
+# CurrentAccount: Withdrawn 2500. Remaining balance = -1500
+# CurrentAccount: David's current balance = -1500
 
-# Case 1: Successful withdrawal (within overdraft limit)
-print("\nCase 1: Withdraw within limit")
-test_account.withdraw(2500)  # 1000 balance + 2000 limit = OK (2500 < 3000)
-test_account.display_balance()
-
-# Case 2: Exceed overdraft limit
-print("\nCase 2: Withdraw exceeding limit")
-test_account.withdraw(4000)  # exceeds 1000 + 2000 = 3000
-test_account.display_balance()
-
-#💡 Expected Output
-
-#--- Testing Overdraft Limit in CurrentAccount ---
-
-#Case 1: Withdraw within limit
-CurrentAccount: Withdrawn 2500. Remaining balance = -1500
-CurrentAccount: David's current balance = -1500
-
-#Case 2: Withdraw exceeding limit
-CurrentAccount: Overdraft limit exceeded! Cannot withdraw 4000.
-CurrentAccount: David's current balance = -1500
-# We can still call subclass-specific methods if needed
-accounts[0].add_interest()  # only for SavingsAccount
-accounts[1].charge_fee(200) # only for CurrentAccount
+# Case 2: Withdraw exceeding limit
+# CurrentAccount: Overdraft limit exceeded! Cannot withdraw 4000.
+# CurrentAccount: David's current balance = -1500
